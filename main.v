@@ -1,3 +1,1 @@
-module Convultional_Encoder(
-	
-    );
+module Convultional_Encoder(in,out);
