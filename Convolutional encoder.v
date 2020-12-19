@@ -1,8 +1,8 @@
 module Convolutional_Encoder(in,parities,CLK);
     input wire in;
     input wire CLK;
-    output reg parities[1:0];
-    reg memmoryCells[2:0];
+    output wire [1:0]parities;
+    wire [2:0]memmoryCells;
     reg [2:0]g1 = 3'b110;
     reg [2:0]g2 = 3'b111;
 
@@ -13,7 +13,7 @@ module Convolutional_Encoder(in,parities,CLK);
 endmodule
 
 
-////////////////shiftregister
+////////////////shift register
 module shiftRegister3Bit(in,out,CLK);
     input wire in,CLK;
     output reg [2:0]out;
