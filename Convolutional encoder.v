@@ -1,3 +1,4 @@
+//a convolutional encoder (r=2 and code rate = 1/2)
 module Convolutional_Encoder(in,parities,CLK);
     input wire in;
     input wire CLK;
@@ -13,10 +14,11 @@ module Convolutional_Encoder(in,parities,CLK);
 endmodule
 
 
-////////////////shift register
+//a shift register for saving constraint bits (here K=3)
+
 module shiftRegister3Bit(in,out,CLK);
     input wire in,CLK;
-    output reg [2:0]out;
+    output reg [2:0]out = 3'b0;
 
     always@(posedge CLK)
         begin
