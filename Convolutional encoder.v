@@ -7,7 +7,7 @@ module Convolutional_Encoder(in,parities,CLK);
 	 reg [1:0]state=2'b00; 
 	 
 	 
-	always@(CLK)
+	always@(posedge CLK)
 	begin
 				if(in == 1'b0 && state == 2'b00) 
                 begin
