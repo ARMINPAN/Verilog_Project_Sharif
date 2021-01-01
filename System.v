@@ -1,14 +1,17 @@
 //////this system connects viterbi decoder and convolutional encoder
 /////in is the input of convolutional encoder
 /////out is the output of viterbi decoder
-module System(in,CLK,out);
+
+
+module System(in,CLK,out,coded_data_v1,coded_data_v2);
     input wire in,CLK;
     output wire out;
-    wire [1:0]coded_data;
-
-    Convolutional_Encoder c_enc(.in(in), .parities(coded_data), .CLK(CLK));
-    Viterbi_V1 v_dec(.parities(coded_data), .CLK(CLK), .out(out));
-
+    output wire [1:0]coded_data_v1;
+    output wire [1:0]coded_data_v2;
+	
+    Convolutional_Encoder_V2 c_enc_v2(.in(in), .parities(coded_data_v1), .CLK(CLK));
+	 Convolutional_Encoder c_enc_v1(.in(in), .parities(coded_data_v2), .CLK(CLK));
+    //Viterbi_V1 v_dec(.parities(coded_data), .CLK(CLK), .out(out));
 
 endmodule
 
