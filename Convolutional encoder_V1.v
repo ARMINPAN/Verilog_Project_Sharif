@@ -1,10 +1,10 @@
 //a convolutional encoder (r=2 and code rate = 1/2)
-module Convolutional_Encoder(in,parities,CLK);
+//V1 is for code rate 1/2 and V2 is for code rate 3/4
+module Convolutional_Encoder_V1(in,parities,CLK);
     input wire in;
     input wire CLK;
     output reg [1:0]parities;
-    wire [2:0]memmoryCells;
-	reg [1:0]state=2'b00; 
+	reg [1:0]state = 2'b00; 
 	 
 	 
 	always@(posedge CLK)
@@ -12,7 +12,7 @@ module Convolutional_Encoder(in,parities,CLK);
 			if(in == 1'b0 && state == 2'b00) 
                 begin
                     parities = 2'b00;
-						  state = 2'b00;
+				    state = 2'b00;
                 end
             else if(in == 1'b1 && state == 2'b00)
                 begin

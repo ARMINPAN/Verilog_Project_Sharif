@@ -1,4 +1,4 @@
-//a viterbi decoder (r=2 and code rate = 1/2)
+//a viterbi decoder (r=2 and code rate = 1/2 )
 //parities come from the convolutional encoder
 //outputs are the inputs of convolutional encoder
 //the first state is 00
