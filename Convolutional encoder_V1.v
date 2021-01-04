@@ -8,7 +8,7 @@ module Convolutional_Encoder_V1(in,parities,CLK);
 	 
 	 
 	always@(posedge CLK)
-        begin
+            begin
                 if(in == 1'b0 && state == 2'b00) 
                     begin
                         parities = 2'b00;

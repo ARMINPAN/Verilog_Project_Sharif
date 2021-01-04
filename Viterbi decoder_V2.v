@@ -125,8 +125,7 @@ module Viterbi_V2(parities,CLK,out);
                 begin
                     out = 1'b1;
                     state = 2'b01;
-                end					 
-					 
+                end					 	 
         end
 
 endmodule
