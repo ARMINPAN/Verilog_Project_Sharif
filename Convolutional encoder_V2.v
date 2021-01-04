@@ -11,140 +11,140 @@ module Convolutional_Encoder_V2(in,parities,CLK);
         begin
             if(counter % 3 == 0)
                 begin
-                if(in == 1'b0 && state == 2'b00) 
-                    begin
-                        parities = 2'b00;
-                        state = 2'b00;
+                    if(in == 1'b0 && state == 2'b00) 
+                        begin
+                            parities = 2'b00;
+                            state = 2'b00;
+                        end
+                    else if(in == 1'b1 && state == 2'b00)
+                        begin
+                            parities = 2'b11;
+                            state = 2'b01;
+                        end
+                    else if(in == 1'b0 && state == 2'b01)
+                        begin
+                            parities = 2'b10;
+                            state = 2'b10;
+                        end
+                    else if(in == 1'b1 && state == 2'b01)
+                        begin
+                            parities = 2'b01;
+                            state = 2'b11;
+                        end
+                    else if(in == 1'b0 && state == 2'b11)
+                        begin
+                            parities = 2'b01;
+                            state = 2'b10;
+                        end
+                    else if(in == 1'b1 && state == 2'b11)
+                        begin
+                            parities = 2'b10;
+                            state = 2'b11;
+                        end
+                    else if(in == 1'b0 && state == 2'b10)
+                        begin
+                            parities = 2'b11;
+                            state = 2'b00;
+                        end
+                    else if(in == 1'b1 && state == 2'b10)
+                        begin
+                            parities = 2'b00;
+                            state = 2'b01;
+                        end                
                     end
-                else if(in == 1'b1 && state == 2'b00)
-                    begin
-                        parities = 2'b11;
-                        state = 2'b01;
-                    end
-                else if(in == 1'b0 && state == 2'b01)
-                    begin
-                        parities = 2'b10;
-                        state = 2'b10;
-                    end
-                else if(in == 1'b1 && state == 2'b01)
-                    begin
-                        parities = 2'b01;
-                        state = 2'b11;
-                    end
-                else if(in == 1'b0 && state == 2'b11)
-                    begin
-                        parities = 2'b01;
-                        state = 2'b10;
-                    end
-                else if(in == 1'b1 && state == 2'b11)
-                    begin
-                        parities = 2'b10;
-                        state = 2'b11;
-                    end
-                else if(in == 1'b0 && state == 2'b10)
-                    begin
-                        parities = 2'b11;
-                        state = 2'b00;
-                    end
-                else if(in == 1'b1 && state == 2'b10)
-                    begin
-                        parities = 2'b00;
-                        state = 2'b01;
-                    end                
-                end
 
-    //////////////////////////////////////////////////
+        //////////////////////////////////////////////////
 
-            if(counter % 3 == 1)
-                begin
-                if(in == 1'b0 && state == 2'b00) 
+                if(counter % 3 == 1)
                     begin
-                        parities = 2'b0z;
-                        state = 2'b00;
+                    if(in == 1'b0 && state == 2'b00) 
+                        begin
+                            parities = 2'b0z;
+                            state = 2'b00;
+                        end
+                    else if(in == 1'b1 && state == 2'b00)
+                        begin
+                            parities = 2'b1z;
+                            state = 2'b01;
+                        end
+                    else if(in == 1'b0 && state == 2'b01)
+                        begin
+                            parities = 2'b1z;
+                            state = 2'b10;
+                        end
+                    else if(in == 1'b1 && state == 2'b01)
+                        begin
+                            parities = 2'b0z;
+                            state = 2'b11;
+                        end
+                    else if(in == 1'b0 && state == 2'b11)
+                        begin
+                            parities = 2'b0z;
+                            state = 2'b10;
+                        end
+                    else if(in == 1'b1 && state == 2'b11)
+                        begin
+                            parities = 2'b1z;
+                            state = 2'b11;
+                        end
+                    else if(in == 1'b0 && state == 2'b10)
+                        begin
+                            parities = 2'b1z;
+                            state = 2'b00;
+                        end
+                    else if(in == 1'b1 && state == 2'b10)
+                        begin
+                            parities = 2'b0z;
+                            state = 2'b01;
+                        end                
                     end
-                else if(in == 1'b1 && state == 2'b00)
-                    begin
-                        parities = 2'b1z;
-                        state = 2'b01;
-                    end
-                else if(in == 1'b0 && state == 2'b01)
-                    begin
-                        parities = 2'b1z;
-                        state = 2'b10;
-                    end
-                else if(in == 1'b1 && state == 2'b01)
-                    begin
-                        parities = 2'b0z;
-                        state = 2'b11;
-                    end
-                else if(in == 1'b0 && state == 2'b11)
-                    begin
-                        parities = 2'b0z;
-                        state = 2'b10;
-                    end
-                else if(in == 1'b1 && state == 2'b11)
-                    begin
-                        parities = 2'b1z;
-                        state = 2'b11;
-                    end
-                else if(in == 1'b0 && state == 2'b10)
-                    begin
-                        parities = 2'b1z;
-                        state = 2'b00;
-                    end
-                else if(in == 1'b1 && state == 2'b10)
-                    begin
-                        parities = 2'b0z;
-                        state = 2'b01;
-                    end                
-                end
-            
+                
 
-    /////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////
 
-            if(counter % 3 == 2)
-                begin
-                if(in == 1'b0 && state == 2'b00) 
+                if(counter % 3 == 2)
                     begin
-                        parities = 2'bz0;
-                        state = 2'b00;
+                    if(in == 1'b0 && state == 2'b00) 
+                        begin
+                            parities = 2'bz0;
+                            state = 2'b00;
+                        end
+                    else if(in == 1'b1 && state == 2'b00)
+                        begin
+                            parities = 2'bz1;
+                            state = 2'b01;
+                        end
+                    else if(in == 1'b0 && state == 2'b01)
+                        begin
+                            parities = 2'bz0;
+                            state = 2'b10;
+                        end
+                    else if(in == 1'b1 && state == 2'b01)
+                        begin
+                            parities = 2'bz1;
+                            state = 2'b11;
+                        end
+                    else if(in == 1'b0 && state == 2'b11)
+                        begin
+                            parities = 2'bz1;
+                            state = 2'b10;
+                        end
+                    else if(in == 1'b1 && state == 2'b11)
+                        begin
+                            parities = 2'bz0;
+                            state = 2'b11;
+                        end
+                    else if(in == 1'b0 && state == 2'b10)
+                        begin
+                            parities = 2'bz1;
+                            state = 2'b00;
+                        end
+                    else if(in == 1'b1 && state == 2'b10)
+                        begin
+                            parities = 2'bz0;
+                            state = 2'b01;
+                        end                
                     end
-                else if(in == 1'b1 && state == 2'b00)
-                    begin
-                        parities = 2'bz1;
-                        state = 2'b01;
-                    end
-                else if(in == 1'b0 && state == 2'b01)
-                    begin
-                        parities = 2'bz0;
-                        state = 2'b10;
-                    end
-                else if(in == 1'b1 && state == 2'b01)
-                    begin
-                        parities = 2'bz1;
-                        state = 2'b11;
-                    end
-                else if(in == 1'b0 && state == 2'b11)
-                    begin
-                        parities = 2'bz1;
-                        state = 2'b10;
-                    end
-                else if(in == 1'b1 && state == 2'b11)
-                    begin
-                        parities = 2'bz0;
-                        state = 2'b11;
-                    end
-                else if(in == 1'b0 && state == 2'b10)
-                    begin
-                        parities = 2'bz1;
-                        state = 2'b00;
-                    end
-                else if(in == 1'b1 && state == 2'b10)
-                    begin
-                        parities = 2'bz0;
-                        state = 2'b01;
-                    end                
-                end
-            counter = counter + 1;   
+                counter = counter + 1;   
         end
 endmodule
