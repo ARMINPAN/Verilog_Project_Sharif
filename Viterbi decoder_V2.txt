@@ -2,19 +2,14 @@
 
 
 module Viterbi_V2(parities,CLK,out);
-	 input wire [1:0]parities;
+	input wire [1:0]parities;
     input wire CLK;
     output reg out=0;
     reg [1:0]state = 2'b00;
-	 integer counter = 0;
+	integer counter = 0;
 
     always@(posedge CLK)
         begin
-		  
-		  
-		  
-		  
-		  
 		  if(counter%3==0)
 		  begin
             if(parities == 2'b00 && state == 2'b00) 
