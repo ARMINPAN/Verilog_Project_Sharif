@@ -10,11 +10,11 @@ module System(in,CLK,out1,out2,coded_data_v1,coded_data_v2);
     output wire [1:0]coded_data_v1;
     output wire [1:0]coded_data_v2;
 	
-	 Convolutional_Encoder_V1 c_enc_v1(.in(in), .parities(coded_data_v1), .CLK(CLK));
+	Convolutional_Encoder_V1 c_enc_v1(.in(in), .parities(coded_data_v1), .CLK(CLK));
     Convolutional_Encoder_V2 c_enc_v2(.in(in), .parities(coded_data_v2), .CLK(CLK));
 
     Viterbi_V1 v_dec_v1(.parities(coded_data_v1), .CLK(CLK), .out(out1));
-	 Viterbi_V2 v_dec_v2(.parities(coded_data_v2), .CLK(CLK), .out(out2));
+	Viterbi_V2 v_dec_v2(.parities(coded_data_v2), .CLK(CLK), .out(out2));
 	 
 	 
 endmodule
