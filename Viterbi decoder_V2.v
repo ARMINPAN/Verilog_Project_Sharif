@@ -1,5 +1,7 @@
-`timescale 1ns / 1ps
-
+//a viterbi decoder (code rate = 3/4 )
+//parities come from the convolutional encoder
+//outputs are the inputs of convolutional encoder
+//the first state is 00
 
 module Viterbi_V2(parities,CLK,out);
 	input wire [1:0]parities;
