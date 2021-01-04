@@ -10,13 +10,7 @@ module Viterbi_V2(parities,CLK,out);
 
     always@(posedge CLK)
         begin
-		  
-		  
-		  
-		  
-		  
-		  if(counter%3==0)
-		  begin
+
             if(parities == 2'b00 && state == 2'b00) 
                 begin
                     out = 1'b0;
@@ -55,59 +49,8 @@ module Viterbi_V2(parities,CLK,out);
                 begin
                     out = 1'b1;
                     state = 2'b01;
-                end
-			end
-
-
-
-	else if(counter%3==1)
-	begin
-	            if(parities === 2'b0z && state == 2'b00) 
-                begin
-                    out = 1'b0;
-                end
-            else if(parities === 2'b1z && state == 2'b00)
-                begin
-                    out = 1'b1;
-                    state = 2'b01;
-                end
-            else if(parities === 2'b1z && state == 2'b01)
-                begin
-                    out = 1'b0;
-                    state = 2'b10;
-                end
-            else if(parities === 2'b0z && state == 2'b01)
-                begin
-                    out = 1'b1;
-                    state = 2'b11;
-                end
-            else if(parities === 2'b0z && state == 2'b11)
-                begin
-                    out = 1'b0;
-                    state = 2'b10;
-                end
-            else if(parities === 2'b1z && state == 2'b11)
-                begin
-                    out = 1'b1;
-                    state = 2'b11;
-                end
-            else if(parities === 2'b1z && state == 2'b10)
-                begin
-                    out = 1'b0;
-                    state = 2'b00;
-                end
-            else if(parities === 2'b0z && state == 2'b10)
-                begin
-                    out = 1'b1;
-                    state = 2'b01;
-                end
-		end
-		
-		
-		
-		else if(counter%3==2)
-			begin
-            if(parities === 2'bz0 && state == 2'b00) 
+                end					 
+            else if(parities === 2'bz0 && state == 2'b00) 
                 begin
                     out = 1'b0;
                 end
@@ -145,9 +88,47 @@ module Viterbi_V2(parities,CLK,out);
                 begin
                     out = 1'b1;
                     state = 2'b01;
+                end					 
+            else if(parities === 2'b0z && state == 2'b00) 
+                begin
+                    out = 1'b0;
                 end
-		end
-	counter=counter+1;
+            else if(parities === 2'b1z && state == 2'b00)
+                begin
+                    out = 1'b1;
+                    state = 2'b01;
+                end
+            else if(parities === 2'b1z && state == 2'b01)
+                begin
+                    out = 1'b0;
+                    state = 2'b10;
+                end
+            else if(parities === 2'b0z && state == 2'b01)
+                begin
+                    out = 1'b1;
+                    state = 2'b11;
+                end
+            else if(parities === 2'b0z && state == 2'b11)
+                begin
+                    out = 1'b0;
+                    state = 2'b10;
+                end
+            else if(parities === 2'b1z && state == 2'b11)
+                begin
+                    out = 1'b1;
+                    state = 2'b11;
+                end
+            else if(parities === 2'b1z && state == 2'b10)
+                begin
+                    out = 1'b0;
+                    state = 2'b00;
+                end
+            else if(parities === 2'b0z && state == 2'b10)
+                begin
+                    out = 1'b1;
+                    state = 2'b01;
+                end					 
+					 
 end
 
 endmodule
